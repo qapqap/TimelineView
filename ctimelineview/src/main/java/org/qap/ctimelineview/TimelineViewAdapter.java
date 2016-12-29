@@ -65,7 +65,12 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
 
         final float scale = getContext().getResources().getDisplayMetrics().density;
 
-        if(position==0) {
+
+        if (position == 0 && position == RowDataList.size()-1) {
+            rowUpperLine.setVisibility(View.INVISIBLE);
+            rowLowerLine.setVisibility(View.INVISIBLE);
+        }
+        else if(position==0) {
             int pixels = (int) (row.getBellowLineSize() * scale + 0.5f);
 
             rowUpperLine.setVisibility(View.INVISIBLE);
