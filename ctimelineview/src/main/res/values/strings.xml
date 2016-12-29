@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CTimelineView</string>
+
+    <string name="YEAR">year</string>
+    <string name="YEARS">years</string>
+    <string name="MONTH">month</string>
+    <string name="MONTHS">months</string>
+    <string name="DAY">day</string>
+    <string name="DAYS">days</string>
+    <string name="HOUR">hour</string>
+    <string name="HOURS">hours</string>
+    <string name="MINUTE">minute</string>
+    <string name="MINUTES">minutes</string>
+    <string name="SECOND">second</string>
+    <string name="SECONDS">seconds</string>
+    <string name="AND">and</string>
+
+</resources>

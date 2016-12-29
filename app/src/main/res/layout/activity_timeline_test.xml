@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_timeline_test2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.qap.timelineviewtest.TimelineTest">
+
+    <ListView
+        android:id="@+id/timelineListView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        >
+    </ListView>
+
+</RelativeLayout>
