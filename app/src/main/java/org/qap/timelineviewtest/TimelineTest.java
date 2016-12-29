@@ -51,12 +51,12 @@ public class TimelineTest extends AppCompatActivity {
                             , getRandomColor()
                             //Row Bellow Line Size in dp
                             , getRandomNumber(2,25)
-                            //Row Image Size in dp 
+                            //Row Image Size in dp
                             , getRandomNumber(25,40))
             );
         }
 
-        //Create the Timeline Adapter to order the list by date
+        //Create the Timeline Adapter
         myAdapter = new TimelineViewAdapter(this, 0, TimelineRowsList,
                 //if true, list will be arranged by date
                 true);
@@ -64,7 +64,7 @@ public class TimelineTest extends AppCompatActivity {
 
 
         //Get the ListView and Bind it with the Timeline Adapter
-        ListView myListView = (ListView) findViewById(R.id.timelineListView2);
+        ListView myListView = (ListView) findViewById(R.id.timelineListView);
         myListView.setAdapter(myAdapter);
 
 
