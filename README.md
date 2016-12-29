@@ -16,7 +16,7 @@ Add the dependency:
 
 ```
 	dependencies {
-	        compile 'com.github.qapqap:TimelineView:v1.0'
+	        compile 'com.github.qapqap:TimelineView:v1.1'
 	}
 ```
 
