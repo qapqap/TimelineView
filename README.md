@@ -25,33 +25,33 @@ Add the dependency:
 In your activity java class:
 ```
 //Create Timeline Rows List
-private ArrayList<TimelineRow> TimelineRowsList = new ArrayList<>();
+ArrayList<TimelineRow> TimelineRowsList = new ArrayList<>();
 
 // Add Row to the List
-TimelineRowsList.add(
-                    new TimelineRow(
-                            //Row Id
-                            i
-                            //Row Date
-                            ,new Date()
-                            //Row Title or null
-                            ,"Title"
-                            //Row Description or null
-                            ,"Description"
-                            //Row Image from drawable
-                            ,"img_1"
-                            //Row Bellow Line Color
-                            , Color.argb(255, 255, 255, 255)
-                            //Row Bellow Line Size in dp
-                            , 25
-                            //Row Image Size in dp
-                            , 25)
-            );
+        TimelineRowsList.add(
+                new TimelineRow(
+                        //Row Id
+                        1
+                        //Row Date
+                        ,new Date()
+                        //Row Title or null
+                        ,"Title"
+                        //Row Description or null
+                        ,"Description"
+                        //Row Image from drawable
+                        ,"img_1"
+                        //Row Bellow Line Color
+                        , Color.argb(255, 255, 255, 255)
+                        //Row Bellow Line Size in dp
+                        , 25
+                        //Row Image Size in dp
+                        , 25)
+        );
 
 //Create the Timeline Adapter
 ArrayAdapter<TimelineRow> myAdapter = new TimelineViewAdapter(this, 0, TimelineRowsList,
 //if true, list will be arranged by date
-true);
+                true);
 
 //Get the ListView and Bind it with the Timeline Adapter
 ListView myListView = (ListView) findViewById(R.id.timelineListView);
