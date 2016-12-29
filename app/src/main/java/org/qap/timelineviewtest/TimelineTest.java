@@ -51,7 +51,7 @@ public class TimelineTest extends AppCompatActivity {
                             , getRandomColor()
                             //Row Bellow Line Size in dp
                             , getRandomNumber(2,25)
-                            //Row Image Size in dp
+                            //Row Image Size in dp 
                             , getRandomNumber(25,40))
             );
         }
