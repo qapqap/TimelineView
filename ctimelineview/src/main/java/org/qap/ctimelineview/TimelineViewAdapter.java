@@ -66,7 +66,6 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
 
         final float scale = getContext().getResources().getDisplayMetrics().density;
 
-        //Change the visibility to invisible of the upper and lower lines, first and last row
         if(position==0) {
             int pixels = (int) (row.getBellowLineSize() * scale + 0.5f);
 
@@ -92,7 +91,6 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
         }
 
 
-        //set values
         rowDate.setText(getPastTime(row.getDate()));
         if (row.getTitle() == null)
             rowTitle.setVisibility(View.GONE);
@@ -104,14 +102,12 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
             rowDescription.setText(row.getDescription());
 
 
-        //get the image
         if (row.getImage() !=null) {
             int imageID = context.getResources().getIdentifier(row.getImage(), "drawable", context.getPackageName());
             if (imageID != 0)
                 rowImage.setImageResource(imageID);
         }
 
-        //set image size
         int pixels = (int) (row.getImageSize() * scale + 0.5f);
         rowImage.getLayoutParams().width = pixels;
         rowImage.getLayoutParams().height = pixels;
