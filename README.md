@@ -1,5 +1,5 @@
 # Customizable Timeline View for Android
-Customizable Timeline View for Android, Create a simple timeline list with few lines of code. You can adjust the image, image size, line color and the line size.
+Customizable Timeline View for Android, Create a simple timeline list with few lines of code. You can adjust the image, image size, line color and line size.
 
 ![](Screenshot.png)
 
