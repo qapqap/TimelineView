@@ -18,7 +18,7 @@ Add the dependency:
 
 ```
 	dependencies {
-	        compile 'com.github.qapqap:TimelineView:v1.1'
+	        compile 'com.github.qapqap:TimelineView:v1.2'
 	}
 ```
 
@@ -40,14 +40,19 @@ ArrayList<TimelineRow> TimelineRowsList = new ArrayList<>();
                         ,"Title"
                         //Row Description or null
                         ,"Description"
-                        //Row Image from drawable
+                        //Row bitmap Image or null
                         ,"img_1"
                         //Row Bellow Line Color
                         , Color.argb(255, 255, 255, 255)
                         //Row Bellow Line Size in dp
                         , 25
                         //Row Image Size in dp
-                        , 25)
+                        , 25
+			//Row image Background color or -1
+                        , Color.argb(255, 255, 255, 255)
+                        //Row image Background Size in dp or -1
+                        , 25
+			)
         );
 
 //Create the Timeline Adapter
