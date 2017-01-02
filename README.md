@@ -1,5 +1,7 @@
 # Customizable Timeline View for Android
-Customizable Timeline View for Android, Create a simple timeline list with few lines of code. You can adjust the image, image size, line color and the line size.
+Customizable Timeline View for Android, Create a simple timeline list with few lines of code. You can adjust the image, image size, line color and line size.
+
+![](Screenshot.png)
 
 # Download
 Add it in your root `build.gradle` at the end of repositories:
@@ -16,7 +18,7 @@ Add the dependency:
 
 ```
 	dependencies {
-	        compile 'com.github.qapqap:TimelineView:v1.0'
+	        compile 'com.github.qapqap:TimelineView:v1.1'
 	}
 ```
 
