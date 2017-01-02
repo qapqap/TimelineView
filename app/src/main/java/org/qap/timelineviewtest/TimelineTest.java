@@ -54,7 +54,7 @@ public class TimelineTest extends AppCompatActivity {
                             , getRandomNumber(2,25)
                             //Row Image Size in dp
                             , getRandomNumber(25,40)
-                            //Row Background color or -1
+                            //Row image Background color or -1
                             , -1
                             //Row Background Size in dp or -1
                             , getRandomNumber(25,40)
