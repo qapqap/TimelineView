@@ -30,30 +30,30 @@ In your activity java class:
 ArrayList<TimelineRow> TimelineRowsList = new ArrayList<>();
 
 // Add Row to the List
-        TimelineRowsList.add(
-                new TimelineRow(
-                        //Row Id
-                        1
-                        //Row Date
-                        ,new Date()
-                        //Row Title or null
-                        ,"Title"
-                        //Row Description or null
-                        ,"Description"
-                        //Row bitmap Image or null
-                        ,"img_1"
-                        //Row Bellow Line Color
-                        , Color.argb(255, 255, 255, 255)
-                        //Row Bellow Line Size in dp
-                        , 25
-                        //Row Image Size in dp
-                        , 25
-			//Row image Background color or -1
-                        , Color.argb(255, 255, 255, 255)
-                        //Row image Background Size in dp or -1
-                        , 25
-			)
-        );
+TimelineRowsList.add(
+        new TimelineRow(
+                //Row Id
+                1
+                //Row Date
+                ,new Date()
+                //Row Title or null
+                ,"Title"
+                //Row Description or null
+                ,"Description"
+                //Row bitmap Image or null
+                ,"img_1"
+                //Row Bellow Line Color
+                , Color.argb(255, 255, 255, 255)
+                //Row Bellow Line Size in dp
+                , 25
+                //Row Image Size in dp
+                , 25
+                //Row image Background color or -1
+                , Color.argb(255, 255, 255, 255)
+                //Row image Background Size in dp or -1
+                , 25
+	)
+);
 
 //Create the Timeline Adapter
 ArrayAdapter<TimelineRow> myAdapter = new TimelineViewAdapter(this, 0, TimelineRowsList,
