@@ -3,6 +3,7 @@ package org.qap.ctimelineview;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,15 +107,33 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
             rowDescription.setText(row.getDescription());
 
 
+
         if (row.getImage() !=null) {
-            int imageID = context.getResources().getIdentifier(row.getImage(), "drawable", context.getPackageName());
-            if (imageID != 0)
-                rowImage.setImageResource(imageID);
+                rowImage.setImageBitmap(row.getImage());
         }
 
         int pixels = (int) (row.getImageSize() * scale + 0.5f);
         rowImage.getLayoutParams().width = pixels;
         rowImage.getLayoutParams().height = pixels;
+
+        View backgroundView =  view.findViewById(R.id.crowBackground);
+        if (row.getBackgroundColor() == -1)
+            backgroundView.setBackground(null);
+        else {
+            if (row.getBackgroundSize() == -1) {
+                backgroundView.getLayoutParams().width = pixels;
+                backgroundView.getLayoutParams().height = pixels;
+            } else {
+                int BackgroundPixels = (int) (row.getBackgroundSize() * scale + 0.5f);
+                backgroundView.getLayoutParams().width = BackgroundPixels;
+                backgroundView.getLayoutParams().height = BackgroundPixels;
+            }
+            GradientDrawable background = (GradientDrawable) backgroundView.getBackground();
+            if (background != null) {
+                background.setColor(row.getBackgroundColor());
+            }
+        }
+
 
         ViewGroup.MarginLayoutParams marginParams = (ViewGroup.MarginLayoutParams) rowImage.getLayoutParams();
         marginParams.setMargins(0, (int) (pixels/2)*-1, 0, (pixels/2)*-1);

@@ -8,8 +8,6 @@
     <RelativeLayout
         android:layout_width="72dp"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
         >
 
 
@@ -34,13 +32,20 @@
             />
 
 
+        <View
+            android:id="@+id/crowBackground"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circle_shape"
+            android:layout_centerInParent="true"
+            />
 
         <ImageView
             android:id="@+id/crowImg"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/d_circle"
             android:layout_marginTop="-12.5dp"
             android:layout_marginBottom="-12.5dp"
             android:layout_centerInParent="true"

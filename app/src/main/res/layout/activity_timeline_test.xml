@@ -4,7 +4,10 @@
     android:id="@+id/activity_timeline_test2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.qap.timelineviewtest.TimelineTest">
+    tools:context="org.qap.timelineviewtest.TimelineTest"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    >
 
     <ListView
         android:id="@+id/timelineListView"

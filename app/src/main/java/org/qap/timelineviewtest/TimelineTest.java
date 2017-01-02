@@ -1,5 +1,6 @@
 package org.qap.timelineviewtest;
 
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,14 +46,19 @@ public class TimelineTest extends AppCompatActivity {
                             ,"Title "+i
                             //Row Description or null
                             ,"Description " +i
-                            //Row Image
-                            ,"img_"+ getRandomNumber(0,9)
+                            //Row bitmap Image or null
+                            , BitmapFactory.decodeResource(getResources(), R.drawable.img_0 + getRandomNumber(0,10))
                             //Row Bellow Line Color
                             , getRandomColor()
                             //Row Bellow Line Size in dp
                             , getRandomNumber(2,25)
                             //Row Image Size in dp
-                            , getRandomNumber(25,40))
+                            , getRandomNumber(25,40)
+                            //Row Background color or -1
+                            , -1
+                            //Row Background Size in dp or -1
+                            , getRandomNumber(25,40)
+                    )
             );
         }
 
@@ -111,14 +117,19 @@ public class TimelineTest extends AppCompatActivity {
                                                                        ,"Title "+i
                                                                        //Row Description or null
                                                                        ,"Description " +i
-                                                                       //Row Image
-                                                                       ,"img_"+ getRandomNumber(0,9)
+                                                                       //Row bitmap Image or null
+                                                                       ,BitmapFactory.decodeResource(getResources(), R.drawable.img_0 + getRandomNumber(0,10))
                                                                        //Row Bellow Line Color
                                                                        , getRandomColor()
                                                                        //Row Bellow Line Size in dp
                                                                        , getRandomNumber(2,25)
                                                                        //Row Image Size in dp
-                                                                       , getRandomNumber(25,40))
+                                                                       , getRandomNumber(25,40)
+                                                                       //Row Background color or -1
+                                                                       , getRandomColor()
+                                                                       //Row Background Size in dp or -1
+                                                                       , getRandomNumber(25,40)
+                                                               )
                                                        );
                                                    }
 
@@ -144,13 +155,18 @@ public class TimelineTest extends AppCompatActivity {
                         //Row Description or null
                         ,"Description " +TimelineRowsList.size()
                         //Row Image
-                        ,"img_"+ getRandomNumber(0,9)
+                        ,null
                         //Row Bellow Line Color
                         , getRandomColor()
                         //Row Bellow Line Size in dp
                         , getRandomNumber(2,25)
                         //Row Image Size in dp
-                        , getRandomNumber(25,40))
+                        , getRandomNumber(25,40)
+                        //Row Background color or -1
+                        , getRandomColor()
+                        //Row Background Size in dp or -1
+                        , getRandomNumber(25,40)
+                )
                         //insert position
                         ,0)
                 ;

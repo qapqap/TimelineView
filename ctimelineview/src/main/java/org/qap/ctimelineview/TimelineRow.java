@@ -1,6 +1,8 @@
 package org.qap.ctimelineview;
 
 
+import android.graphics.Bitmap;
+
 import java.util.Date;
 
 
@@ -11,12 +13,14 @@ public class TimelineRow {
     private Date date;
     private String title;
     private String description;
-    private String image;
+    private Bitmap image;
     private int bellowLineColor;
     private int bellowLineSize;
     private int imageSize;
+    private int backgroundColor;
+    private int backgroundSize;
 
-    public TimelineRow(int id, Date date, String title, String  description, String image, int bellowLineColor, int bellowLineSize, int imageSize) {
+    public TimelineRow(int id, Date date, String title, String  description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize, int backgroundColor, int backgroundSize) {
         this.id = id;
         this.date = date;
         this.title = title;
@@ -25,6 +29,37 @@ public class TimelineRow {
         this.bellowLineColor = bellowLineColor;
         this.bellowLineSize = bellowLineSize;
         this.imageSize = imageSize;
+        this.backgroundColor = backgroundColor;
+        this.backgroundSize = backgroundSize;
+    }
+
+    public TimelineRow(int id, Date date, String title, String  description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize) {
+        this.id = id;
+        this.date = date;
+        this.title = title;
+        this.description = description;
+        this.image = image;
+        this.bellowLineColor = bellowLineColor;
+        this.bellowLineSize = bellowLineSize;
+        this.imageSize = imageSize;
+        this.backgroundColor = -1;
+        this.backgroundSize = -1;
+    }
+
+    public int getBackgroundSize() {
+        return backgroundSize;
+    }
+
+    public void setBackgroundSize(int backgroundSize) {
+        this.backgroundSize = backgroundSize;
+    }
+
+    public int getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    public void setBackgroundColor(int backgroundColor) {
+        this.backgroundColor = backgroundColor;
     }
 
     public String getDescription() {
@@ -67,11 +102,11 @@ public class TimelineRow {
         this.bellowLineColor = bellowLineColor;
     }
 
-    public String getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(Bitmap image) {
         this.image = image;
     }
 
