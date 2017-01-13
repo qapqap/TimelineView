@@ -42,9 +42,9 @@ TimelineRowsList.add(
                 ,"Description"
                 //Row bitmap Image or null
                 ,BitmapFactory.decodeResource(getResources(), R.drawable.img_0)
-                //Row Bellow Line Color
+                //Row Below Line Color
                 , Color.argb(255, 255, 255, 255)
-                //Row Bellow Line Size in dp
+                //Row Below Line Size in dp
                 , 25
                 //Row Image Size in dp
                 , 25
