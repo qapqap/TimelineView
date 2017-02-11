@@ -6,26 +6,26 @@ Customizable Timeline View for Android, Create a simple timeline list with few l
 # Download
 Add it in your root `build.gradle` at the end of repositories:
 
-```
+``` groovy
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
 Add the dependency:
 
-```
-	dependencies {
-	        compile 'com.github.qapqap:TimelineView:v1.2'
-	}
+``` groovy
+dependencies {
+    compile 'com.github.qapqap:TimelineView:v1.2'
+}
 ```
 
 # Usage
 
 In your activity java class:
-```
+``` java
 //Create Timeline Rows List
 ArrayList<TimelineRow> TimelineRowsList = new ArrayList<>();
 
@@ -66,15 +66,13 @@ myListView.setAdapter(myAdapter);
 ```
 
 In your activity layout xml
-```
-    <ListView
-        android:id="@+id/timelineListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@null"
-        android:dividerHeight="0dp"
-        >
-    </ListView>
+``` xml
+<ListView
+    android:id="@+id/timelineListView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@null"
+    android:dividerHeight="0dp" />
 ```
 
 License
