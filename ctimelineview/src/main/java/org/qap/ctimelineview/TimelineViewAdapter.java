@@ -204,6 +204,7 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
 
 
     private ArrayList<TimelineRow> rearrangeByDate (ArrayList<TimelineRow> objects) {
+        if(objects.get(0) == null || objects.get(0).getDate() == null ) return objects;
         int size = objects.size();
         for (int i = 0; i< size-1; i++) {
             for (int j = i+1; j < size ; j++) {
