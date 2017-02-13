@@ -18,7 +18,7 @@ Add the dependency:
 
 ``` groovy
 dependencies {
-    compile 'com.github.qapqap:TimelineView:v1.2'
+    compile 'com.github.qapqap:TimelineView:v1.4'
 }
 ```
 
