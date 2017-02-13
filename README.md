@@ -6,49 +6,54 @@ Customizable Timeline View for Android, Create a simple timeline list with few l
 # Download
 Add it in your root `build.gradle` at the end of repositories:
 
-```
+``` groovy
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
 Add the dependency:
 
-```
-	dependencies {
-	        compile 'com.github.qapqap:TimelineView:v1.1'
-	}
+``` groovy
+dependencies {
+    compile 'com.github.qapqap:TimelineView:v1.4'
+}
 ```
 
 # Usage
 
 In your activity java class:
-```
+``` java
 //Create Timeline Rows List
 ArrayList<TimelineRow> TimelineRowsList = new ArrayList<>();
 
 // Add Row to the List
-        TimelineRowsList.add(
-                new TimelineRow(
-                        //Row Id
-                        1
-                        //Row Date
-                        ,new Date()
-                        //Row Title or null
-                        ,"Title"
-                        //Row Description or null
-                        ,"Description"
-                        //Row Image from drawable
-                        ,"img_1"
-                        //Row Bellow Line Color
-                        , Color.argb(255, 255, 255, 255)
-                        //Row Bellow Line Size in dp
-                        , 25
-                        //Row Image Size in dp
-                        , 25)
-        );
+TimelineRowsList.add(
+        new TimelineRow(
+                //Row Id
+                1
+                //Row Date
+                ,new Date()
+                //Row Title or null
+                ,"Title"
+                //Row Description or null
+                ,"Description"
+                //Row bitmap Image or null
+                ,BitmapFactory.decodeResource(getResources(), R.drawable.img_0)
+                //Row Below Line Color
+                , Color.argb(255, 255, 255, 255)
+                //Row Below Line Size in dp
+                , 25
+                //Row Image Size in dp
+                , 25
+                //Row image Background color or -1
+                , Color.argb(255, 255, 255, 255)
+                //Row image Background Size in dp or -1
+                , 25
+	)
+);
 
 //Create the Timeline Adapter
 ArrayAdapter<TimelineRow> myAdapter = new TimelineViewAdapter(this, 0, TimelineRowsList,
@@ -61,15 +66,13 @@ myListView.setAdapter(myAdapter);
 ```
 
 In your activity layout xml
-```
-    <ListView
-        android:id="@+id/timelineListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@null"
-        android:dividerHeight="0dp"
-        >
-    </ListView>
+``` xml
+<ListView
+    android:id="@+id/timelineListView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@null"
+    android:dividerHeight="0dp" />
 ```
 
 License
