@@ -193,7 +193,7 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
         s.append(timespan).append(' ');
         s.append(timespan == 1 ? name : namePlural);
         if (timespanNext > 0) {
-            s.append(' ').append(AND).append(' ').append(timespanNext);
+            s.append(' ').append(AND).append(' ').append(timespanNext).append(' ');
             s.append(timespanNext == 1 ? nameNext : nameNextPlural);
         }
     }
