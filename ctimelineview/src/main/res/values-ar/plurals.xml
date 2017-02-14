@@ -1,0 +1,55 @@
+<resources>
+    <plurals name="years">
+        <item quantity="zero">%d سنوات</item>
+        <item quantity="one">%d سنة</item>
+        <item quantity="two">%d سنوات</item>
+        <item quantity="few">%d سنوات</item>
+        <item quantity="many">%d سنوات</item>
+        <item quantity="other">%d سنوات</item>
+    </plurals>
+
+    <plurals name="months">
+        <item quantity="zero">%d شهور</item>
+        <item quantity="one">%d شهر</item>
+        <item quantity="two">%d شهور</item>
+        <item quantity="few">%d شهور</item>
+        <item quantity="many">%d شهور</item>
+        <item quantity="other">%d شهور</item>
+    </plurals>
+
+    <plurals name="days">
+        <item quantity="zero">%d ايام</item>
+        <item quantity="one">%d يوم</item>
+        <item quantity="two">%d ايام</item>
+        <item quantity="few">%d ايام</item>
+        <item quantity="many">%d ايام</item>
+        <item quantity="other">%d ايام</item>
+    </plurals>
+
+    <plurals name="hours">
+        <item quantity="zero">%d ساعات</item>
+        <item quantity="one">%d ساعة</item>
+        <item quantity="two">%d ساعات</item>
+        <item quantity="few">%d ساعات</item>
+        <item quantity="many">%d ساعات</item>
+        <item quantity="other">%d ساعات</item>
+    </plurals>
+
+    <plurals name="minutes">
+        <item quantity="zero">%d دقائق</item>
+        <item quantity="one">%d دقيقة</item>
+        <item quantity="two">%d دقائق</item>
+        <item quantity="few">%d دقائق</item>
+        <item quantity="many">%d دقائق</item>
+        <item quantity="other">%d دقائق</item>
+    </plurals>
+
+    <plurals name="seconds">
+        <item quantity="zero">%d ثواني</item>
+        <item quantity="one">%d ثانية</item>
+        <item quantity="two">%d ثواني</item>
+        <item quantity="few">%d ثواني</item>
+        <item quantity="many">%d ثواني</item>
+        <item quantity="other">%d ثواني</item>
+    </plurals>
+</resources>

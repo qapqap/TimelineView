@@ -2,16 +2,5 @@
 <resources>
     <string name="app_name">CTimelineView</string>
     <string name="AND">و</string>
-    <string name="DAY">يوم</string>
-    <string name="DAYS">ايام</string>
-    <string name="HOUR">ساعة</string>
-    <string name="HOURS">ساعات</string>
-    <string name="MINUTE">دقيقة</string>
-    <string name="MINUTES">دقائق</string>
-    <string name="MONTH">شهر</string>
-    <string name="MONTHS">شهور</string>
-    <string name="SECOND">ثانية</string>
-    <string name="SECONDS">ثواني</string>
-    <string name="YEAR">سنة</string>
-    <string name="YEARS">سنوات</string>
+
 </resources>

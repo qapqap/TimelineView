@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">CTimelineView</string>
 
-    <string name="AND">and</string>
+    <string name="AND">и</string>
 
 </resources>
+
