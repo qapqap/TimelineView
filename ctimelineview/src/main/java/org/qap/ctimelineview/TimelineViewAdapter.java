@@ -147,7 +147,7 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
     private String getPastTime(Date date) {
 
         if (date == null) return "";
-        String dateText = "";
+        StringBuilder dateText = new StringBuilder();
         Date today = new Date ();
         long diff = (today.getTime() - date.getTime()) / 1000;
 
@@ -158,50 +158,45 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
         long minutes = (diff / 60) % 60;
         long seconds = diff % 60;
 
-        if (years  > 0) {
-            if (years == 1) dateText += years + " " + YEAR;
-            else dateText += years + " " + YEARS;
-            if (months > 0 && months == 1) dateText += " " +  AND + " " + months + " " + MONTH;
-            else if (months > 0) dateText += " " +  AND + " " + months + " " + MONTHS;
+        if (years > 0) {
+            appendPastTime(dateText, years, YEAR, YEARS, months, MONTH, MONTHS);
         }
 
-        else if (months > 0 ) {
-            if (months == 1) dateText += months + " " + MONTH;
-            else dateText += months + " " + MONTHS;
-            if (days > 0 && days == 1) dateText += " " +  AND + " " + days + " " + DAY;
-            else if (days > 0) dateText += " " + AND + " " + days + " " + DAYS;
+        else if (months > 0) {
+            appendPastTime(dateText, months, MONTH, MONTHS, days, DAY, DAYS);
         }
 
         else if (days > 0) {
-            if (days == 1) dateText += days + " " + DAY;
-            else dateText += days + " " + DAYS;
-            if (hours > 0 && hours == 1) dateText += " " +  AND + " " + hours + " " + HOUR;
-            else if (hours > 0) dateText += " " +  AND + " " + hours + " " + HOURS;
+            appendPastTime(dateText, days, DAY, DAYS, hours, HOUR, HOURS);
         }
 
         else if (hours > 0) {
-            if (hours == 1) dateText += hours + " " + HOUR;
-            else dateText += hours + " " + HOURS;
-            if (minutes > 0 && minutes == 1) dateText += " " +  AND + " " + minutes + " " + MINUTE;
-            else if (minutes > 0) dateText += " " +  AND + " " + minutes + " " + MINUTES;
+            appendPastTime(dateText, hours, HOUR, HOURS, minutes, MINUTE, MINUTES);
         }
 
         else if (minutes > 0) {
-            if (minutes == 1) dateText += minutes + " " + MINUTE;
-            else dateText += minutes + " " + MINUTES;
-            if (seconds > 0 && seconds == 1) dateText += " " +  AND + " " + seconds + " " + SECOND;
-            else if (seconds > 0) dateText += " " +  AND + " " + seconds + " " + SECONDS;
+            appendPastTime(dateText, minutes, MINUTE, MINUTES, seconds, SECOND, SECONDS);
         }
 
         else if (seconds >= 0) {
-            if (seconds == 1 || seconds ==0) dateText += seconds + " " + SECOND;
-            else dateText += seconds + " " + SECONDS;
+            dateText.append(seconds).append(' ');
+            dateText.append(seconds <= 1 ? SECOND : SECONDS);
         }
 
-
-        return dateText;
+        return dateText.toString();
     }
 
+    private void appendPastTime(StringBuilder s,
+            long timespan, String name, String namePlural,
+            long timespanNext, String nameNext, String nameNextPlural) {
+
+        s.append(timespan).append(' ');
+        s.append(timespan == 1 ? name : namePlural);
+        if (timespanNext > 0) {
+            s.append(' ').append(AND).append(' ').append(timespanNext);
+            s.append(timespanNext == 1 ? nameNext : nameNextPlural);
+        }
+    }
 
     private ArrayList<TimelineRow> rearrangeByDate (ArrayList<TimelineRow> objects) {
         if(objects.get(0) == null || objects.get(0).getDate() == null ) return objects;
