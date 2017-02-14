@@ -19,6 +19,20 @@ public class TimelineRow {
     private int imageSize;
     private int backgroundColor;
     private int backgroundSize;
+    
+    public TimelineRow(int id, Date date) {
+        this(id, date, /*title*/null, /*desc*/null);
+    }
+
+    public TimelineRow(int id, Date date, String title, String description) {
+        this(id, date, title, description, /*Bitmap*/null,
+                /*line color*/0xFFFFFFFF, /*line size*/25/*dp*/,
+                /*image size*/25/*dp*/);
+    }
+
+    public TimelineRow(int id, Date date, String title, String description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize) {
+        this(id, date, title, description, image, bellowLineColor, bellowLineSize, imageSize, -1, -1);
+    }
 
     public TimelineRow(int id, Date date, String title, String  description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize, int backgroundColor, int backgroundSize) {
         this.id = id;
@@ -31,19 +45,6 @@ public class TimelineRow {
         this.imageSize = imageSize;
         this.backgroundColor = backgroundColor;
         this.backgroundSize = backgroundSize;
-    }
-
-    public TimelineRow(int id, Date date, String title, String  description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize) {
-        this.id = id;
-        this.date = date;
-        this.title = title;
-        this.description = description;
-        this.image = image;
-        this.bellowLineColor = bellowLineColor;
-        this.bellowLineSize = bellowLineSize;
-        this.imageSize = imageSize;
-        this.backgroundColor = -1;
-        this.backgroundSize = -1;
     }
 
     public int getBackgroundSize() {
