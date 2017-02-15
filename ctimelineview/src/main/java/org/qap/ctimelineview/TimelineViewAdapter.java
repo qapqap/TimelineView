@@ -3,6 +3,7 @@ package org.qap.ctimelineview;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,33 +19,21 @@ import java.util.List;
 
 public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
 
-    private String YEAR, YEARS , MONTH , MONTHS , DAY , DAYS , HOUR , HOURS , MINUTE , MINUTES , SECOND , SECONDS , AND;
-
     private Context context;
+    private Resources res;
     private List<TimelineRow> RowDataList;
+    private String AND;
 
 
     public TimelineViewAdapter(Context context, int resource, ArrayList<TimelineRow> objects, boolean orderTheList) {
         super(context, resource, objects);
         this.context = context;
+        res = context.getResources();
+        AND = res.getString(R.string.AND);
         if (orderTheList)
             this.RowDataList = rearrangeByDate(objects);
         else
             this.RowDataList = objects;
-
-        YEAR = context.getResources().getString(R.string.YEAR);
-        YEARS = context.getResources().getString(R.string.YEARS);
-        MONTH = context.getResources().getString(R.string.MONTH);
-        MONTHS = context.getResources().getString(R.string.MONTHS);
-        DAY = context.getResources().getString(R.string.DAY);
-        DAYS = context.getResources().getString(R.string.DAYS);
-        HOUR = context.getResources().getString(R.string.HOUR);
-        HOURS = context.getResources().getString(R.string.HOURS);
-        MINUTE = context.getResources().getString(R.string.MINUTE);
-        MINUTES = context.getResources().getString(R.string.MINUTES);
-        SECOND = context.getResources().getString(R.string.SECOND);
-        SECONDS = context.getResources().getString(R.string.SECONDS);
-        AND = context.getResources().getString(R.string.AND);
     }
 
 
@@ -141,7 +130,7 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
 
         return view;
     }
-    
+
 
 
     private String getPastTime(Date date) {
@@ -159,42 +148,40 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
         long seconds = diff % 60;
 
         if (years > 0) {
-            appendPastTime(dateText, years, YEAR, YEARS, months, MONTH, MONTHS);
+            appendPastTime(dateText, years, R.plurals.years, months, R.plurals.months);
         }
 
         else if (months > 0) {
-            appendPastTime(dateText, months, MONTH, MONTHS, days, DAY, DAYS);
+            appendPastTime(dateText, months, R.plurals.months, days, R.plurals.days);
         }
 
         else if (days > 0) {
-            appendPastTime(dateText, days, DAY, DAYS, hours, HOUR, HOURS);
+            appendPastTime(dateText, days, R.plurals.days, hours, R.plurals.hours);
         }
 
         else if (hours > 0) {
-            appendPastTime(dateText, hours, HOUR, HOURS, minutes, MINUTE, MINUTES);
+            appendPastTime(dateText, hours, R.plurals.hours, minutes, R.plurals.minutes);
         }
 
         else if (minutes > 0) {
-            appendPastTime(dateText, minutes, MINUTE, MINUTES, seconds, SECOND, SECONDS);
+            appendPastTime(dateText, minutes, R.plurals.minutes, seconds, R.plurals.seconds);
         }
 
         else if (seconds >= 0) {
-            dateText.append(seconds).append(' ');
-            dateText.append(seconds <= 1 ? SECOND : SECONDS);
+            dateText.append(res.getQuantityString(R.plurals.seconds, (int) seconds, (int) seconds));
         }
 
         return dateText.toString();
     }
 
     private void appendPastTime(StringBuilder s,
-            long timespan, String name, String namePlural,
-            long timespanNext, String nameNext, String nameNextPlural) {
+                                long timespan, int nameId,
+                                long timespanNext, int nameNextId) {
 
-        s.append(timespan).append(' ');
-        s.append(timespan == 1 ? name : namePlural);
+        s.append(res.getQuantityString(nameId, (int) timespan, timespan ));
         if (timespanNext > 0) {
-            s.append(' ').append(AND).append(' ').append(timespanNext).append(' ');
-            s.append(timespanNext == 1 ? nameNext : nameNextPlural);
+            s.append(' ').append(AND).append(' ');
+            s.append(res.getQuantityString(nameNextId, (int) timespanNext, timespanNext));
         }
     }
 
