@@ -1,5 +1,5 @@
 # Customizable Timeline View for Android
-Customizable Timeline View for Android, Create a simple timeline list with few lines of code. You can adjust the image, image size, line color and line size.
+Customizable Timeline View for Android, Create a simple timeline list with few lines of code. You can adjust the image, image size, line color, line size, background to the image and the background size.
 
 ![](Screenshot.png)
 
@@ -18,7 +18,7 @@ Add the dependency:
 
 ``` groovy
 dependencies {
-    compile 'com.github.qapqap:TimelineView:v1.4'
+    compile 'com.github.qapqap:TimelineView:v1.5'
 }
 ```
 
@@ -26,39 +26,32 @@ dependencies {
 
 In your activity java class:
 ``` java
-//Create Timeline Rows List
+//create Timeline rows List
 ArrayList<TimelineRow> TimelineRowsList = new ArrayList<>();
 
-// Add Row to the List
-TimelineRowsList.add(
-        new TimelineRow(
-                //Row Id
-                1
-                //Row Date
-                ,new Date()
-                //Row Title or null
-                ,"Title"
-                //Row Description or null
-                ,"Description"
-                //Row bitmap Image or null
-                ,BitmapFactory.decodeResource(getResources(), R.drawable.img_0)
-                //Row Below Line Color
-                , Color.argb(255, 255, 255, 255)
-                //Row Below Line Size in dp
-                , 25
-                //Row Image Size in dp
-                , 25
-                //Row image Background color or -1
-                , Color.argb(255, 255, 255, 255)
-                //Row image Background Size in dp or -1
-                , 25
-	)
-);
+//create new timeline row (Id, Row Date, Row Title, Row Description)
+TimelineRow myRow = new TimelineRow(1, new Date(), "Title", "Description");
 
-//Create the Timeline Adapter
+//to set the row bitmap image (optional)
+myRow.setImage(BitmapFactory.decodeResource(getResources(), R.drawable.img_0));
+//to set row Below Line Color (optional)
+myRow.setBellowLineColor(Color.argb(255, 255, 255, 255));
+//to set row Below Line Size in dp (optional)
+myRow.setBellowLineSize(25); 
+//to set row Image Size in dp (optional)
+myRow.setImageSize(25);
+//to set background color of the row image (optional)
+myRow.setBackgroundColor(Color.argb(255, 0, 0, 0));
+//to set the Background Size of the row image in dp (optional)
+myRow.setBackgroundSize(30); 
+
+//add the new row to the list
+TimelineRowsList.add(myRow);
+
+//create the Timeline Adapter
 ArrayAdapter<TimelineRow> myAdapter = new TimelineViewAdapter(this, 0, TimelineRowsList,
-//if true, list will be arranged by date
-                true);
+//if true, list will be sorted by date
+	true);
 
 //Get the ListView and Bind it with the Timeline Adapter
 ListView myListView = (ListView) findViewById(R.id.timelineListView);
