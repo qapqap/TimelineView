@@ -18,7 +18,7 @@ Add the dependency:
 
 ``` groovy
 dependencies {
-    compile 'com.github.qapqap:TimelineView:v1.5'
+    compile 'com.github.qapqap:TimelineView:v1.6'
 }
 ```
 
@@ -26,42 +26,54 @@ dependencies {
 
 In your activity java class:
 ``` java
-//create Timeline rows List
-ArrayList<TimelineRow> TimelineRowsList = new ArrayList<>();
+// Create Timeline rows List
+ArrayList<TimelineRow> timelineRowsList = new ArrayList<>();
 
-//create new timeline row (Id, Row Date, Row Title, Row Description)
-TimelineRow myRow = new TimelineRow(1, new Date(), "Title", "Description");
+// Create new timeline row (Row Id)
+TimelineRow myRow = new TimelineRow(0);
 
-//to set the row bitmap image (optional)
-myRow.setImage(BitmapFactory.decodeResource(getResources(), R.drawable.img_0));
-//to set row Below Line Color (optional)
-myRow.setBellowLineColor(Color.argb(255, 255, 255, 255));
-//to set row Below Line Size in dp (optional)
-myRow.setBellowLineSize(25); 
-//to set row Image Size in dp (optional)
-myRow.setImageSize(25);
-//to set background color of the row image (optional)
+// To set the row Date (optional)
+myRow.setDate(new Date());
+// To set the row Title (optional)
+myRow.setTitle("Title");
+// To set the row Description (optional)
+myRow.setDescription("Description");
+// To set the row bitmap image (optional)
+myRow.setImage(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+// To set row Below Line Color (optional)
+myRow.setBellowLineColor(Color.argb(255, 0, 0, 0));
+// To set row Below Line Size in dp (optional)
+myRow.setBellowLineSize(6);
+// To set row Image Size in dp (optional)
+myRow.setImageSize(40);
+// To set background color of the row image (optional)
 myRow.setBackgroundColor(Color.argb(255, 0, 0, 0));
-//to set the Background Size of the row image in dp (optional)
-myRow.setBackgroundSize(30); 
+// To set the Background Size of the row image in dp (optional)
+myRow.setBackgroundSize(60);
+// To set row Date text color (optional)
+myRow.setDateColor(Color.argb(255, 0, 0, 0));
+// To set row Title text color (optional)
+myRow.setTitleColor(Color.argb(255, 0, 0, 0));
+// To set row Description text color (optional)
+myRow.setDescriptionColor(Color.argb(255, 0, 0, 0));
 
-//add the new row to the list
-TimelineRowsList.add(myRow);
+// Add the new row to the list
+timelineRowsList.add(myRow);
 
-//create the Timeline Adapter
-ArrayAdapter<TimelineRow> myAdapter = new TimelineViewAdapter(this, 0, TimelineRowsList,
-//if true, list will be sorted by date
-	true);
+// Create the Timeline Adapter
+ArrayAdapter<TimelineRow> myAdapter = new TimelineViewAdapter(this, 0, timelineRowsList,
+	//if true, list will be sorted by date
+	false);
 
-//Get the ListView and Bind it with the Timeline Adapter
-ListView myListView = (ListView) findViewById(R.id.timelineListView);
+// Get the ListView and Bind it with the Timeline Adapter
+ListView myListView = (ListView) findViewById(R.id.timeline_listView);
 myListView.setAdapter(myAdapter);
 ```
 
 In your activity layout xml
 ``` xml
 <ListView
-    android:id="@+id/timelineListView"
+    android:id="@+id/timeline_listView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:divider="@null"
