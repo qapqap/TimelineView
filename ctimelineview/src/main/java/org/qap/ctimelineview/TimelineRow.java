@@ -6,35 +6,51 @@ import android.graphics.Bitmap;
 import java.util.Date;
 
 
-
 public class TimelineRow {
 
     private int id;
-    private Date date;
-    private String title;
-    private String description;
-    private Bitmap image;
-    private int bellowLineColor;
-    private int bellowLineSize;
-    private int imageSize;
-    private int backgroundColor;
-    private int backgroundSize;
-    
-    public TimelineRow(int id, Date date) {
-        this(id, date, /*title*/null, /*desc*/null);
+    private Date date = null;
+    private String title = null;
+    private String description = null;
+    private Bitmap image = null;
+    private int bellowLineColor = 0;
+    private int bellowLineSize = 6;
+    private int imageSize = 50;
+    private int backgroundColor = 0;
+    private int backgroundSize = 50;
+    private int dateColor = 0;
+    private int titleColor = 0;
+    private int descriptionColor = 0;
+
+    public TimelineRow(int id) {
+        this.id = id;
     }
 
+    public TimelineRow(int id, Date date) {
+        this.id = id;
+        this.date = date;
+    }
+
+
     public TimelineRow(int id, Date date, String title, String description) {
-        this(id, date, title, description, /*Bitmap*/null,
-                /*line color*/0xFFFFFFFF, /*line size*/25/*dp*/,
-                /*image size*/25/*dp*/);
+        this.id = id;
+        this.date = date;
+        this.title = title;
+        this.description = description;
     }
 
     public TimelineRow(int id, Date date, String title, String description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize) {
-        this(id, date, title, description, image, bellowLineColor, bellowLineSize, imageSize, -1, -1);
+        this.id = id;
+        this.date = date;
+        this.title = title;
+        this.description = description;
+        this.image = image;
+        this.bellowLineColor = bellowLineColor;
+        this.bellowLineSize = bellowLineSize;
+        this.imageSize = imageSize;
     }
 
-    public TimelineRow(int id, Date date, String title, String  description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize, int backgroundColor, int backgroundSize) {
+    public TimelineRow(int id, Date date, String title, String description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize, int backgroundColor, int backgroundSize) {
         this.id = id;
         this.date = date;
         this.title = title;
@@ -45,6 +61,22 @@ public class TimelineRow {
         this.imageSize = imageSize;
         this.backgroundColor = backgroundColor;
         this.backgroundSize = backgroundSize;
+    }
+
+    public TimelineRow(int id, Date date, String title, String description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize, int backgroundColor, int backgroundSize, int dateColor, int titleColor, int descriptionColor) {
+        this.id = id;
+        this.date = date;
+        this.title = title;
+        this.description = description;
+        this.image = image;
+        this.bellowLineColor = bellowLineColor;
+        this.bellowLineSize = bellowLineSize;
+        this.imageSize = imageSize;
+        this.backgroundColor = backgroundColor;
+        this.backgroundSize = backgroundSize;
+        this.dateColor = dateColor;
+        this.titleColor = titleColor;
+        this.descriptionColor = descriptionColor;
     }
 
     public int getBackgroundSize() {
@@ -113,7 +145,6 @@ public class TimelineRow {
 
     public Date getDate() {
         return date;
-
     }
 
     public void setDate(Date date) {
@@ -126,5 +157,29 @@ public class TimelineRow {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getDateColor() {
+        return dateColor;
+    }
+
+    public void setDateColor(int dateColor) {
+        this.dateColor = dateColor;
+    }
+
+    public int getTitleColor() {
+        return titleColor;
+    }
+
+    public void setTitleColor(int titleColor) {
+        this.titleColor = titleColor;
+    }
+
+    public int getDescriptionColor() {
+        return descriptionColor;
+    }
+
+    public void setDescriptionColor(int descriptionColor) {
+        this.descriptionColor = descriptionColor;
     }
 }
